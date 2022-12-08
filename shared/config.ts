@@ -102,8 +102,8 @@ export const CLOTHING_CONFIG: IClothingConfig = {
             {
                 dlcName: 'cloth_addon_001',
                 count: {
-                    [ORIENTATION.FEMALE]: 4,
-                    [ORIENTATION.MALE]: 1,
+                    [ORIENTATION.FEMALE]: 8,
+                    [ORIENTATION.MALE]: 5,
                 },
             },
         ],
@@ -134,7 +134,7 @@ export const CLOTHING_CONFIG: IClothingConfig = {
             {
                 dlcName: 'cloth_addon_001',
                 count: {
-                    [ORIENTATION.FEMALE]: 2,
+                    [ORIENTATION.FEMALE]: 8,
                     [ORIENTATION.MALE]: 0,
                 },
             },
