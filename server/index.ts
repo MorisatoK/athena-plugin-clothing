@@ -6,5 +6,5 @@ const PLUGIN_NAME = 'Athena Clothing';
 
 PluginSystem.registerPlugin(PLUGIN_NAME, () => {
     ClothingFunctions.init();
-    alt.log(`~lg~CORE ==> ${PLUGIN_NAME} was Loaded`);
+    alt.log(`~lg~${PLUGIN_NAME} was Loaded`);
 });

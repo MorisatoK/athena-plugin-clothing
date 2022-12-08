@@ -240,8 +240,8 @@ export class ClothingFunctions {
         if (drawable <= defaultMaxSize) {
             const dlcData = isProp ? player.getDlcProp(id) : player.getDlcClothes(id);
             return {
-                dlcName: dlcData.dlc,
-                drawable: dlcData.drawable,
+                dlcName: this.mapDlcHash(dlcData.dlc),
+                drawable: this.mapDlcDrawable(dlcData.dlc, dlcData.drawable),
                 texture: dlcData.texture,
             };
         }
@@ -285,6 +285,46 @@ export class ClothingFunctions {
         return null;
     }
 
+    /**
+     * Maps incorrectly reported dlc hashes from `.getDlcClothes(id)` to hopefully the correct one.
+     *
+     * @static
+     * @param {number} dlc
+     * @memberof ClothingFunctions
+     */
+    static mapDlcHash(dlc: number): number {
+        switch (dlc) {
+            case 1224880856:
+                dlc = alt.hash('mp_f_sum2');
+                break;
+
+            default:
+                break;
+        }
+
+        return dlc;
+    }
+
+    /**
+     * Maps incorrectly reported dlc drawable from `.getDlcClothes(id)` to hopefully the correct one.
+     *
+     * @static
+     * @param {number} dlc
+     * @param {number} drawable
+     * @memberof ClothingFunctions
+     */
+    static mapDlcDrawable(dlc: number, drawable: number): number {
+        switch (dlc) {
+            case alt.hash('mp_m_sum2'):
+                drawable++;
+                break;
+
+            default:
+                break;
+        }
+
+        return drawable;
+    }
     /**
      * Purchases all components sent up from the client-side.
      *

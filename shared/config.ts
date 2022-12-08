@@ -71,18 +71,74 @@ export const CLOTHING_CONFIG: IClothingConfig = {
             // },
         ],
         [CLOTHING_IDS.TORSOS]: [],
-        [CLOTHING_IDS.LEGS]: [],
-        [CLOTHING_IDS.BAGS]: [],
-        [CLOTHING_IDS.SHOES]: [],
-        [CLOTHING_IDS.ACCESSORIES]: [],
-        [CLOTHING_IDS.UNDERSHIRTS]: [],
+        [CLOTHING_IDS.LEGS]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 27,
+                    [ORIENTATION.MALE]: 4,
+                },
+            },
+        ],
+        [CLOTHING_IDS.BAGS]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 17,
+                    [ORIENTATION.MALE]: 3,
+                },
+            },
+        ],
+        [CLOTHING_IDS.SHOES]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 15,
+                    [ORIENTATION.MALE]: 23,
+                },
+            },
+        ],
+        [CLOTHING_IDS.ACCESSORIES]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 4,
+                    [ORIENTATION.MALE]: 1,
+                },
+            },
+        ],
+        [CLOTHING_IDS.UNDERSHIRTS]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 14,
+                    [ORIENTATION.MALE]: 1,
+                },
+            },
+        ],
         [CLOTHING_IDS.BODY_ARMOUR]: [],
-        [CLOTHING_IDS.TOP]: [],
+        [CLOTHING_IDS.TOP]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 55,
+                    [ORIENTATION.MALE]: 11,
+                },
+            },
+        ],
     },
     DLC_PROPS: {
         [PROP_IDS.HATS]: [],
         [PROP_IDS.GLASSES]: [],
-        [PROP_IDS.EARS]: [],
+        [PROP_IDS.EARS]: [
+            {
+                dlcName: 'cloth_addon_001',
+                count: {
+                    [ORIENTATION.FEMALE]: 2,
+                    [ORIENTATION.MALE]: 0,
+                },
+            },
+        ],
         [PROP_IDS.WATCHES]: [],
         [PROP_IDS.BRACELETS]: [],
     },

@@ -6,7 +6,6 @@ import PedEditCamera from '@AthenaClient/utility/camera';
 import { PedCharacter } from '@AthenaClient/utility/characterPed';
 import { isAnyMenuOpen } from '@AthenaClient/utility/menus';
 import { sleep } from '@AthenaClient/utility/sleep';
-import { SYSTEM_EVENTS } from '@AthenaShared/enums/system';
 import { Appearance } from '@AthenaShared/interfaces/appearance';
 import { ClothingComponent } from '@AthenaShared/interfaces/clothing';
 import { Item } from '@AthenaShared/interfaces/item';
@@ -14,6 +13,7 @@ import { CLOTHING_CONFIG } from '../shared/config';
 import { CLOTHING_INTERACTIONS } from '../shared/events';
 import { CLOTHING_DLC_INFO, IClothingStore } from '../shared/interfaces';
 import { ComponentVueInfo } from '../shared/types';
+import { SHARED_CONFIG } from '@AthenaShared/configurations/shared';
 
 const PAGE_NAME = 'Clothing';
 const CAMERA_POSITIONS = [
@@ -179,25 +179,25 @@ class InternalFunctions implements ViewModel {
         // Default Components
         if (alt.Player.local.model !== 1885233650) {
             // Check if not male
-            native.setPedComponentVariation(PedCharacter.get(), 1, 0, 0, 0); // mask
-            native.setPedComponentVariation(PedCharacter.get(), 3, 0, 0, 0); // arms
-            native.setPedComponentVariation(PedCharacter.get(), 4, 14, 0, 0); // pants
-            native.setPedComponentVariation(PedCharacter.get(), 5, 0, 0, 0); // bag
-            native.setPedComponentVariation(PedCharacter.get(), 6, 35, 0, 0); // shoes
-            native.setPedComponentVariation(PedCharacter.get(), 7, 0, 0, 0); // accessories
-            native.setPedComponentVariation(PedCharacter.get(), 8, 15, 0, 0); // undershirt
-            native.setPedComponentVariation(PedCharacter.get(), 9, 0, 0, 0); // body armour
-            native.setPedComponentVariation(PedCharacter.get(), 11, 0, 0, 0); // torso
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.MASK); // mask
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.TORSO); // torso / arms
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.PANTS); // pants
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.BAG); // bag
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.SHOES); // shoes
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.FEMALE.ACCESSORIES); // accessories
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.UNDERSHIRT); // undershirt
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.ARMOR); // body armour
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.TOP); // tops
         } else {
-            native.setPedComponentVariation(PedCharacter.get(), 1, 0, 0, 0); // mask
-            native.setPedComponentVariation(PedCharacter.get(), 3, 15, 0, 0); // arms
-            native.setPedComponentVariation(PedCharacter.get(), 5, 0, 0, 0); // bag
-            native.setPedComponentVariation(PedCharacter.get(), 4, 14, 0, 0); // pants
-            native.setPedComponentVariation(PedCharacter.get(), 6, 34, 0, 0); // shoes
-            native.setPedComponentVariation(PedCharacter.get(), 7, 0, 0, 0); // accessories
-            native.setPedComponentVariation(PedCharacter.get(), 8, 15, 0, 0); // undershirt
-            native.setPedComponentVariation(PedCharacter.get(), 9, 0, 0, 0); // body armour
-            native.setPedComponentVariation(PedCharacter.get(), 11, 91, 0, 0); // torso
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.MASK); // mask
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.TORSO); // torso / arms
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.PANTS); // pants
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.BAG); // bag
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.SHOES); // shoes
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.ACCESSORIES); // accessories
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.UNDERSHIRT); // undershirt
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.ARMOR); // body armour
+            native.setPedComponentVariation(PedCharacter.get(), ...SHARED_CONFIG.DEFAULT_UNDERWEAR.MALE.TOP); // tops
         }
 
         if (!items || !Array.isArray(items)) {
